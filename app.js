@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const v1Router = require('./routes/api/index');
-const bank = require('./routes/api/createBank');
+const bank = require('./routes/api/userInfo');
 
 const errorHandler = require('./utils/errrorHandler');
 const { loggerMiddleware } = require('./utils/logger');
@@ -35,7 +35,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(loggerMiddleware);
 
-app.use('/api/v1/user', bank);
+// Routes to search user, getprofile, and create bank
+// app.use('/api/v1', bank);
+
 app.use('/api/v1', v1Router);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

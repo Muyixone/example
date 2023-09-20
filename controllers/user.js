@@ -30,7 +30,6 @@ async function userLogin(req, res, next) {
     // Call the loginUser service function
     const { user, token } = await loginUser({ email, password });
 
-    console.log(req.user);
     // Return a success response with user data and JWT token
     res.status(200).json({ success: true, user, token });
   } catch (error) {
