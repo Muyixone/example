@@ -20,6 +20,7 @@ const getProfile = async (req, res) => {
         message: 'User not authorized',
       });
     }
+
     return res.json({
       message: 'User data fetched successfully',
       statusCode: 200,
